@@ -1,0 +1,16 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+:root{
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --error-color: #cf6679;
+}
+
+body {
+  background-image: radial-gradient(circle, #323653, #323653 50%, #04082E 100%);
+  color: var(--text-color);
+}

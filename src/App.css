@@ -1,0 +1,21 @@
+#root {
+  padding: 2rem;
+  text-align: center;
+}
+
+.threeScene {
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .threeScene {
+    height: 50vh;
+    width: 100%;
+  }
+}
+
+.canvas {
+  cursor: grab;
+}
