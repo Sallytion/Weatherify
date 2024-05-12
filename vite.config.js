@@ -9,5 +9,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  assetsInclude: ['**/*.glb']
+  assetsInclude: ['**/*.glb'],
+  server: {
+    port: 4851,
+  },
 })
