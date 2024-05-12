@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Navbar from './components/Navbar.jsx'
 import ThreeScene from './components/ThreeScene.jsx'
 import { CardDemo } from './components/CardDemo.jsx'
 import Confetti from './components/Confetti.jsx'
+import * as dat from 'dat.gui';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -10,6 +11,19 @@ function App() {
   const [isSunny,setIsSunny] = useState(false);
   const [darkClouds,setDarkClouds] = useState(false);
   const [lightning,setLightning] = useState(false);
+
+  const gui = useRef();
+  useEffect(() => {
+  gui.current = new dat.GUI();
+  gui.current.add({ isRainy }, 'isRainy').onChange(setIsRainy);
+  gui.current.add({ isSunny }, 'isSunny').onChange(setIsSunny);
+  gui.current.add({ darkClouds }, 'darkClouds').onChange(setDarkClouds);
+  gui.current.add({ lightning }, 'lightning').onChange(setLightning);
+
+  return () => {
+    gui.current.destroy();
+  };
+}, []);
 
   useEffect(() => {
     const handleResize = () => {

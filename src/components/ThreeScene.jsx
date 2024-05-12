@@ -79,6 +79,10 @@ const LightningModel = () => {
 const ThreeScene = ({ isSunny, darkClouds, lightning }) => {
   const [cloudColor,setCloudColor] = useState(darkClouds ? 0xaaaaaa : 0xffffff);
 
+  useEffect(()=>{
+    setCloudColor(darkClouds ? 0xaaaaaa : 0xffffff);
+  },[darkClouds]);
+
   return (
     <div className="threeScene">
       <Canvas className="canvas" camera={{ position: [0, 0, 15] }} style={{height: '60vh'}}>
